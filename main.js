@@ -64,10 +64,23 @@ function initDropdowns() {
   });
 }
 
+// ══ 回到頂部 ══
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // ══ 啟動 ══
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initDropdowns();
   initFloatSidebar();
   initParallax();
+  initBackToTop();
 });
