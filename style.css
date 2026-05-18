@@ -540,30 +540,40 @@ tr:hover td { background:var(--bg3); }
   position:sticky;
   top:60px;
   z-index:90;
-  background:var(--bg2);
-  border-bottom:1px solid rgba(201,169,110,.15);
-  padding:8px 0;
-  margin-bottom:20px;
+  margin-bottom:24px;
 }
 .sticky-back a {
-  color:var(--text-muted);font-size:.78rem;letter-spacing:1px;
-  padding:4px 0;
-  display:inline-block;
+  display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(201,169,110,.06));
+  border:1px solid rgba(201,169,110,.45);
+  border-radius:6px;
+  padding:7px 16px;
+  color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:1px;
+  transition:background .2s,border-color .2s;
 }
-.sticky-back a:hover { color:var(--gold); }
+.sticky-back a:hover {
+  background:linear-gradient(135deg,rgba(201,169,110,.28),rgba(201,169,110,.12));
+  border-color:var(--gold);
+}
 
 /* ── 回到頂部按鈕 ── */
 #backToTop {
   position:fixed;bottom:28px;right:20px;z-index:999;
-  width:40px;height:40px;border-radius:50%;
-  background:var(--bg2);border:1px solid rgba(201,169,110,.5);
-  color:var(--gold);font-size:1.1rem;line-height:1;
-  cursor:pointer;transition:opacity .3s,transform .3s;
+  width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(201,169,110,.25),rgba(201,169,110,.1));
+  border:1.5px solid rgba(201,169,110,.7);
+  color:var(--gold);font-size:1.4rem;font-weight:700;
+  cursor:pointer;transition:opacity .3s,transform .2s,background .2s;
   opacity:0;pointer-events:none;
   display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.5);
 }
 #backToTop.visible { opacity:1;pointer-events:auto; }
-#backToTop:hover { background:var(--bg3);transform:translateY(-3px); }
+#backToTop:hover {
+  background:linear-gradient(135deg,rgba(201,169,110,.45),rgba(201,169,110,.2));
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(201,169,110,.25);
+}
 
 .btn-outline {
   display:inline-block; padding:9px 24px;
