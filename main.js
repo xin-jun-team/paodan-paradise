@@ -76,6 +76,21 @@ function initBackToTop() {
   });
 }
 
+// ══ 返回遊戲特色浮動按鈕 ══
+function initBackToFeature() {
+  const link = document.querySelector('.sticky-back a');
+  if (!link) return;
+  const btn = document.createElement('button');
+  btn.id = 'backToFeature';
+  btn.title = '返回遊戲特色';
+  btn.textContent = '← 特色';
+  btn.addEventListener('click', () => { location.href = link.href; });
+  document.body.appendChild(btn);
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+}
+
 // ══ 啟動 ══
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
@@ -83,4 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatSidebar();
   initParallax();
   initBackToTop();
+  initBackToFeature();
 });

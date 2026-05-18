@@ -535,11 +535,8 @@ td {
 tr:hover td { background:var(--bg3); }
 
 /* ══ 按鈕 ══ */
-/* ── 返回遊戲特色 sticky ── */
+/* ── 返回遊戲特色（頁頂靜態連結） ── */
 .sticky-back {
-  position:sticky;
-  top:60px;
-  z-index:90;
   margin-bottom:24px;
 }
 .sticky-back a {
@@ -554,6 +551,25 @@ tr:hover td { background:var(--bg3); }
 .sticky-back a:hover {
   background:linear-gradient(135deg,rgba(201,169,110,.28),rgba(201,169,110,.12));
   border-color:var(--gold);
+}
+
+/* ── 返回遊戲特色浮動按鈕 ── */
+#backToFeature {
+  position:fixed;bottom:96px;right:20px;z-index:999;
+  width:58px;height:36px;border-radius:18px;
+  background:linear-gradient(135deg,rgba(201,169,110,.35),rgba(201,169,110,.15));
+  border:1.5px solid rgba(201,169,110,.7);
+  color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.5px;
+  cursor:pointer;transition:opacity .3s,transform .2s,background .2s;
+  opacity:0;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.5);
+  white-space:nowrap;
+}
+#backToFeature.visible { opacity:1;pointer-events:auto; }
+#backToFeature:hover {
+  background:linear-gradient(135deg,rgba(201,169,110,.5),rgba(201,169,110,.25));
+  transform:translateY(-3px);
 }
 
 /* ── 回到頂部按鈕 ── */
