@@ -559,10 +559,10 @@ tr:hover td { background:var(--bg3); }
 /* ── 回到頂部按鈕 ── */
 #backToTop {
   position:fixed;bottom:28px;right:20px;z-index:999;
-  width:46px;height:46px;border-radius:50%;
-  background:linear-gradient(135deg,rgba(201,169,110,.25),rgba(201,169,110,.1));
-  border:1.5px solid rgba(201,169,110,.7);
-  color:var(--gold);font-size:1.4rem;font-weight:700;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(201,169,110,.35),rgba(201,169,110,.15));
+  border:2px solid rgba(201,169,110,.85);
+  color:var(--gold);font-size:1.8rem;font-weight:700;
   cursor:pointer;transition:opacity .3s,transform .2s,background .2s;
   opacity:0;pointer-events:none;
   display:flex;align-items:center;justify-content:center;
