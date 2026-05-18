@@ -69,7 +69,7 @@ function initBackToTop() {
   const btn = document.getElementById('backToTop');
   if (!btn) return;
   window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 300);
+    btn.classList.toggle('visible', window.scrollY > 100);
   }, { passive: true });
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -87,7 +87,7 @@ function initBackToFeature() {
   btn.addEventListener('click', () => { location.href = link.href; });
   document.body.appendChild(btn);
   window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 300);
+    btn.classList.toggle('visible', window.scrollY > 100);
   }, { passive: true });
 }
 
