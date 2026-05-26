@@ -966,6 +966,15 @@ footer {
   display:flex; flex-wrap:wrap; gap:0;
   border-bottom:2px solid var(--border);
   margin-bottom:28px;
+  position:relative;
+}
+.tab-indicator {
+  position:absolute; bottom:-2px; height:2px;
+  background:var(--pink);
+  border-radius:2px;
+  transition:left .22s cubic-bezier(.4,0,.2,1), width .22s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+  box-shadow:0 0 8px rgba(201,160,64,.6);
 }
 .tab-btn {
   padding:9px 16px;

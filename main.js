@@ -91,6 +91,83 @@ function initBackToFeature() {
   }, { passive: true });
 }
 
+// ══ A: 浮動 TOC ══
+function initTOC() {
+  const panel = document.querySelector('.toc-panel');
+  if (!panel) return;
+  const links = panel.querySelectorAll('.toc-link[data-target]');
+  if (!links.length) return;
+  panel.classList.add('visible');
+  const targets = Array.from(links).map(l => document.getElementById(l.dataset.target)).filter(Boolean);
+  function update() {
+    let current = targets[0]?.id;
+    targets.forEach(t => { if (window.scrollY + 120 >= t.offsetTop) current = t.id; });
+    links.forEach(l => l.classList.toggle('active', l.dataset.target === current));
+  }
+  links.forEach(l => {
+    l.addEventListener('click', () => {
+      const t = document.getElementById(l.dataset.target);
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+// ══ C: Tab 系統 ══
+function initTabs() {
+  document.querySelectorAll('.tab-wrap').forEach(wrap => {
+    const nav    = wrap.querySelector(':scope > .tab-nav');
+    const btns   = wrap.querySelectorAll(':scope > .tab-nav > .tab-btn');
+    const panels = wrap.querySelectorAll(':scope > .tab-panel');
+
+    // 建立滑動指示條
+    const indicator = document.createElement('div');
+    indicator.className = 'tab-indicator';
+    nav.appendChild(indicator);
+
+    function moveIndicatorTo(btn) {
+      indicator.style.left  = btn.offsetLeft + 'px';
+      indicator.style.width = btn.offsetWidth + 'px';
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        panels[i]?.classList.add('active');
+        moveIndicatorTo(btn);
+      });
+      btn.addEventListener('mouseenter', () => moveIndicatorTo(btn));
+    });
+
+    // 滑鼠離開 nav 時回到 active 按鈕
+    nav.addEventListener('mouseleave', () => {
+      const active = nav.querySelector('.tab-btn.active');
+      if (active) moveIndicatorTo(active);
+    });
+
+    if (btns.length) {
+      btns[0].classList.add('active');
+      panels[0]?.classList.add('active');
+      setTimeout(() => moveIndicatorTo(btns[0]), 0);
+    }
+  });
+}
+
+// ══ F: Accordion ══
+function initAccordion() {
+  document.querySelectorAll('.accordion-hd').forEach(hd => {
+    hd.addEventListener('click', () => {
+      const bd = hd.nextElementSibling;
+      const isOpen = hd.classList.contains('open');
+      hd.classList.toggle('open', !isOpen);
+      bd.classList.toggle('open', !isOpen);
+    });
+  });
+}
+
 // ══ 啟動 ══
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
@@ -99,4 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initBackToTop();
   initBackToFeature();
+  initTOC();
+  initTabs();
+  initAccordion();
 });
