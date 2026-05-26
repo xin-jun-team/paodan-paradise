@@ -966,7 +966,12 @@ footer {
   display:flex; flex-wrap:wrap; gap:0;
   border-bottom:2px solid var(--border);
   margin-bottom:28px;
-  position:relative;
+  position:sticky;
+  top:56px;
+  z-index:80;
+  background:rgba(6,9,16,0.95);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
 }
 .tab-indicator {
   position:absolute; bottom:-2px; height:2px;
