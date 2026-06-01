@@ -96,6 +96,19 @@
   <button class="nav-btn"        onclick="jumpTo('rome')">🏛️ 羅馬地圖</button>
 </nav>
 <div class="container" style="padding-top:8px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <button class="left-toc-btn" onclick="jumpTo('general')" data-sec="general">一般地監</button>
+  <button class="left-toc-btn" onclick="jumpTo('fantasy')" data-sec="fantasy">夢幻地監</button>
+  <button class="left-toc-btn" onclick="jumpTo('rift')" data-sec="rift">時空裂縫</button>
+  <button class="left-toc-btn" onclick="jumpTo('tower')" data-sec="tower">塔系地圖</button>
+  <button class="left-toc-btn" onclick="jumpTo('advanced')" data-sec="advanced">高階地監</button>
+  <button class="left-toc-btn" onclick="jumpTo('vip')" data-sec="vip">VIP 專區</button>
+  <button class="left-toc-btn" onclick="jumpTo('mastery')" data-sec="mastery">專精地圖</button>
+  <button class="left-toc-btn" onclick="jumpTo('rome')" data-sec="rome">羅馬地圖</button>
+</nav>
+<div class="page-main">
 
   <div class="section-block" id="general">
     <div class="map-sec-title blue">⚔️ 一般地監（初 / 中階）</div>
@@ -316,7 +329,7 @@
     </div>
   </div>
 
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -371,6 +384,20 @@ window.addEventListener('scroll', () => {
   _mapSec.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= navH + 60) cur = id; });
   _mapBtns.forEach((btn, i) => btn.classList.toggle('active', _mapSec[i] === cur));
 });
+// Left TOC scroll-spy
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
 </script>
 <script src="main.js"></script>
 <button id="backToTop" title="回到頂部">&#8679;</button>

@@ -10,6 +10,7 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
   </style>
 </head>
 <body>
@@ -43,12 +44,19 @@
   </div>
 
   <div class="feature-detail-content">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#hex-upgrade" data-sec="hex-upgrade">升級資訊</a>
+  <a class="left-toc-btn" href="#hex-table" data-sec="hex-table">等級能力表</a>
+</nav>
+<div class="page-main">
 
     <!-- 升級資訊 -->
     <div style="background:linear-gradient(135deg,#131010,#0d0b0b);border:1px solid rgba(147,52,230,.28);border-radius:10px;overflow:hidden;margin-bottom:24px">
       <div style="background:linear-gradient(90deg,rgba(147,52,230,.18),transparent);padding:14px 20px;border-bottom:1px solid rgba(147,52,230,.2);display:flex;align-items:center;gap:10px">
         <span style="font-size:1.25em">🛠️</span>
-        <h3 style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">六芒星升級資訊</h3>
+        <h3 id="hex-upgrade" style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">六芒星升級資訊</h3>
       </div>
       <div style="padding:18px 20px">
         <div style="display:flex;gap:16px;flex-wrap:wrap">
@@ -68,7 +76,7 @@
     <div style="background:linear-gradient(135deg,#131010,#0d0b0b);border:1px solid rgba(147,52,230,.28);border-radius:10px;overflow:hidden;margin-bottom:24px">
       <div style="background:linear-gradient(90deg,rgba(147,52,230,.18),transparent);padding:14px 20px;border-bottom:1px solid rgba(147,52,230,.2);display:flex;align-items:center;gap:10px">
         <span style="font-size:1.25em">📋</span>
-        <h3 style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">徽章等級能力表</h3>
+        <h3 id="hex-table" style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">徽章等級能力表</h3>
       </div>
       <div style="padding:18px 20px">
         <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
@@ -94,6 +102,7 @@
       </div>
     </div>
 
+</div></div>
   </div>
 
   <div class="feature-nav-btns">
@@ -137,6 +146,21 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body>
 </html>

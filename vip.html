@@ -42,6 +42,15 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#vip-perks" data-sec="vip-perks">VIP 特權</a>
+  <a class="left-toc-btn" href="#vip-valley" data-sec="vip-valley">隱藏之谷</a>
+  <a class="left-toc-btn" href="#vip-tower" data-sec="vip-tower">支配之塔</a>
+  <a class="left-toc-btn" href="#vip-battle" data-sec="vip-battle">烽火戰場</a>
+</nav>
+<div class="page-main">
 
   <!-- 章節目錄 -->
   <div class="toc-bar">
@@ -198,7 +207,7 @@
 
   </div>
 
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -237,6 +246,19 @@
 <script>
 function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 (function(){const secs=['vip-perks','vip-valley','vip-tower','vip-battle'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

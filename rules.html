@@ -26,6 +26,16 @@
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDmGoKtRjS1aZ_pX1e1lD0BSHr0duBAAKmD2sbx8dQVFmjNE0p1cLBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/FGmufEHakxKximWBYuLDBHET6-u8SLaGILTzCQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:220px"><div class="hero-bg" style="background:linear-gradient(135deg,#1a0a08,#0a0818);"></div><div class="hero-content"><div class="hero-badge">GAME RULES</div><h1 class="hero-title"><span style="font-size:2rem">遊戲規章</span></h1><p class="hero-tagline">違規將依情節輕重處置</p></div></div>
 <div class="container" style="padding-top:56px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#rule-ch1" data-sec="rule-ch1">第一章</a>
+  <a class="left-toc-btn" href="#rule-ch2" data-sec="rule-ch2">第二章</a>
+  <a class="left-toc-btn" href="#rule-jail" data-sec="rule-jail">小黑屋</a>
+  <a class="left-toc-btn" href="#rule-redeem" data-sec="rule-redeem">贖回裝備</a>
+  <a class="left-toc-btn" href="#rule-burst" data-sec="rule-burst">衝爆贖回</a>
+</nav>
+<div class="page-main">
   <div class="feature-detail-content" style="max-width:800px;margin:0 auto">
 
     <!-- 章節目錄 -->
@@ -182,7 +192,7 @@
     </div>
 
   </div>
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -221,6 +231,19 @@
 <script>
 function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 (function(){const secs=['rule-ch1','rule-ch2','rule-jail','rule-redeem','rule-burst'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
 function calcRedeem(){
   var n=parseInt(document.getElementById('redeem-times').value)||1;
   if(n<1)n=1;

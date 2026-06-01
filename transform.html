@@ -48,6 +48,13 @@
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#0a1020,#180818);"></div><div class="hero-content"><div class="hero-badge">TRANSFORMATION</div><h1 class="hero-title"><span style="font-size:2rem">變身介紹</span></h1><p class="hero-tagline">強化你的戰鬥能力，掌握每一種變身</p></div></div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <button class="left-toc-btn active" onclick="switchTab('atlas')" data-tab="atlas">圖鑑大全</button>
+  <button class="left-toc-btn" onclick="switchTab('collection')" data-tab="collection">收藏系統</button>
+</nav>
+<div class="page-main">
 
   <div class="page-tabs">
     <button class="page-tab active" onclick="switchTab('atlas')">📖 圖鑑大全</button>
@@ -618,7 +625,7 @@
     </div>
   </div><!-- end tab-collection -->
 
-</div>
+</div></div></div>
 
 <footer>
   <div class="footer-inner">
@@ -662,6 +669,7 @@ function switchTab(name){
   });
   document.getElementById('tab-atlas').classList.toggle('active', name==='atlas');
   document.getElementById('tab-collection').classList.toggle('active', name==='collection');
+  document.querySelectorAll('.left-toc-btn[data-tab]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-tab')===name); });
 }
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>

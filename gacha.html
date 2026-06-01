@@ -7,6 +7,7 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
     .gacha-table{width:100%;border-collapse:collapse;min-width:480px;font-size:14px}
     .gacha-table th{background:var(--bg3);color:var(--text-muted);padding:12px;text-align:left;border-bottom:2px solid var(--border)}
     .gacha-table td{padding:13px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
@@ -40,9 +41,16 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px;background:#0a0808">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#gacha-jackpot" data-sec="gacha-jackpot">特殊大獎</a>
+  <a class="left-toc-btn" href="#gacha-list" data-sec="gacha-list">內容物清單</a>
+</nav>
+<div class="page-main">
 
   <!-- 特殊大獎 -->
-  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">🏆 特殊大獎</h3>
+  <h3 id="gacha-jackpot" style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">🏆 特殊大獎</h3>
   <div class="grand-prize-box">
     <div class="grand-prize-title">✨ 以下道具為稀有特殊大獎，歡迎挑戰！</div>
     <div class="prize-items">
@@ -66,7 +74,7 @@
   </div>
 
   <!-- 詳細內容物清單 -->
-  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">📋 詳細內容物清單</h3>
+  <h3 id="gacha-list" style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">📋 詳細內容物清單</h3>
   <div style="color:var(--text-muted);font-size:.88em;margin-bottom:12px">
     <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-high">橘色</span> = 高機率</span>
     <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-mid">綠色</span> = 中機率</span>
@@ -205,7 +213,7 @@
     </ul>
   </div>
 
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -241,5 +249,20 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

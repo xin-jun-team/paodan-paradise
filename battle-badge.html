@@ -7,6 +7,7 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
 
     .bb-wrap { max-width:900px; margin:0 auto; }
 
@@ -69,9 +70,20 @@
 
 <div class="container" style="padding-top:40px;padding-bottom:80px;background:#0a0808">
 <div class="bb-wrap">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#bb-intro" data-sec="bb-intro">徽章介紹</a>
+  <a class="left-toc-btn" href="#bb-chest" data-sec="bb-chest">寶箱機率</a>
+  <a class="left-toc-btn" href="#bb-npc" data-sec="bb-npc">兌換 NPC</a>
+  <a class="left-toc-btn" href="#bb-gallery" data-sec="bb-gallery">外觀圖庫</a>
+  <a class="left-toc-btn" href="#bb-table" data-sec="bb-table">升階能力表</a>
+  <a class="left-toc-btn" href="#bb-pvp" data-sec="bb-pvp">PVP 勳章</a>
+</nav>
+<div class="page-main">
 
   <!-- 戰場徽章介紹 -->
-  <h3 class="bb-section-title">⚔️ 戰場徽章介紹</h3>
+  <h3 id="bb-intro" class="bb-section-title">⚔️ 戰場徽章介紹</h3>
   <div class="rule-box">
     <ul>
       <li>取得方式：透過開啟「戰場寶箱」獲得</li>
@@ -81,7 +93,7 @@
   </div>
 
   <!-- 寶箱機率 -->
-  <h3 class="bb-section-title">🎁 戰場寶箱開啟機率</h3>
+  <h3 id="bb-chest" class="bb-section-title">🎁 戰場寶箱開啟機率</h3>
   <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:28px">
     <table class="bb-table">
       <thead>
@@ -124,7 +136,7 @@
   </div>
 
   <!-- 核心 NPC -->
-  <h3 class="bb-section-title">📍 核心兌換 NPC</h3>
+  <h3 id="bb-npc" class="bb-section-title">📍 核心兌換 NPC</h3>
   <div class="npc-card">
     <img loading="lazy" class="npc-avatar" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIC0GnExeo8eC213SRk6VuTSg5vakilAALCDmsbWOcpVh2IqestMEnHAQADAgADeAADOgQ.jpg" alt="雷兒">
     <div>
@@ -139,7 +151,7 @@
   </div>
 
   <!-- 徽章圖庫 -->
-  <h3 class="bb-section-title">🖼️ 徽章外觀圖庫</h3>
+  <h3 id="bb-gallery" class="bb-section-title">🖼️ 徽章外觀圖庫</h3>
   <div class="gallery-grid">
     <div class="gallery-item"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAICyGnDrrP8xrLwh0RZmnrGIB7d2soDAAK_DmsbWOchVibhnQdECAPaAQADAgADbQADOgQ.png"><span>基礎徽章</span></div>
     <div class="gallery-item"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAICyWnDrsPMTuYlRYbW-b5hG9fUShw0AALADmsbWOchVipjIcBKV3NFAQADAgADbQADOgQ.png"><span>百人斬</span></div>
@@ -150,7 +162,7 @@
   </div>
 
   <!-- 升階表 -->
-  <h3 class="bb-section-title">📊 徽章升階能力表</h3>
+  <h3 id="bb-table" class="bb-section-title">📊 徽章升階能力表</h3>
   <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:28px">
     <table class="bb-table">
       <thead>
@@ -221,7 +233,7 @@
   </div>
 
   <!-- PVP 勳章 -->
-  <h3 class="bb-section-title">🔥 PVP 勳章（6H）</h3>
+  <h3 id="bb-pvp" class="bb-section-title">🔥 PVP 勳章（6H）</h3>
   <div class="pvp-card">
     <div class="pvp-tag">⏳ 限時增益</div>
     <div class="buff-group">
@@ -233,6 +245,7 @@
     </div>
   </div>
 
+</div></div>
 </div>
 </div>
 
@@ -271,5 +284,20 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

@@ -31,6 +31,15 @@
 </div>
 
 <div class="container" style="padding-top:56px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#relic-info" data-sec="relic-info">強化說明</a>
+  <a class="left-toc-btn" href="#relic-melee" data-sec="relic-melee">近戰系列</a>
+  <a class="left-toc-btn" href="#relic-range" data-sec="relic-range">遠程系列</a>
+  <a class="left-toc-btn" href="#relic-mage" data-sec="relic-mage">法師系列</a>
+</nav>
+<div class="page-main">
   <div class="feature-detail-content" style="margin-top:32px">
 
     <!-- 章節目錄 -->
@@ -245,7 +254,7 @@
     </div>
 
   </div>
-</div>
+</div></div></div>
 
 <footer>
   <div class="footer-inner">
@@ -285,6 +294,19 @@
 <script>
 function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 (function(){const secs=['relic-info','relic-melee','relic-range','relic-mage'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

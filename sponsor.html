@@ -58,6 +58,13 @@
 </style>
 
 <div class="container" style="padding-top:48px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <button class="left-toc-btn active" onclick="switchSponsorTab('info')" data-tab="info">贊助須知</button>
+  <button class="left-toc-btn" onclick="switchSponsorTab('flow')" data-tab="flow">贊助流程</button>
+</nav>
+<div class="page-main">
 
   <!-- ══ 分頁標籤 ══ -->
   <div class="page-tabs">
@@ -287,7 +294,7 @@
 
   </div><!-- /tab-flow -->
 
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -329,6 +336,7 @@ function switchSponsorTab(name){
   document.querySelectorAll('.page-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   event.currentTarget.classList.add('active');
+  document.querySelectorAll('.left-toc-btn[data-tab]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-tab')===name); });
 }
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>

@@ -69,6 +69,14 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#section-collection" data-sec="section-collection">BOSS 收藏</a>
+  <a class="left-toc-btn" href="#section-schedule" data-sec="section-schedule">重生時程</a>
+  <a class="left-toc-btn" href="#section-drops" data-sec="section-drops">各等級掉落</a>
+</nav>
+<div class="page-main">
 
   <!-- ══ SECTION 0: BOSS 收藏 ══ -->
   <div id="section-collection" style="scroll-margin-top:100px">
@@ -518,7 +526,7 @@
     </div>
   </div>
 
-</div>
+</div></div></div>
 
 <footer>
   <div class="footer-inner">
@@ -569,6 +577,22 @@
   }
   window.addEventListener('scroll', update, {passive:true});
   update();
+})();
+</script>
+<script>
+// Left TOC scroll-spy
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
 })();
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>

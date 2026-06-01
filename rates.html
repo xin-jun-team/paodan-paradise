@@ -7,6 +7,7 @@
     body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
   </style></head>
 <body>
 <nav class="topnav"><a class="topnav-logo" href="index.html">💣 砲彈天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://lin.ee/qUdjymV" target="_blank">LINE 官方社群</a><a href="sponsor.html">贊助方案</a><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/qUdjymV" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
@@ -16,11 +17,20 @@
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDmGoKtRjS1aZ_pX1e1lD0BSHr0duBAAKmD2sbx8dQVFmjNE0p1cLBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/FGmufEHakxKximWBYuLDBHET6-u8SLaGILTzCQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#080810,#101808);"></div><div class="hero-content"><div class="hero-badge">SERVER RATES</div><h1 class="hero-title"><span style="font-size:2rem">版本倍率</span></h1><p class="hero-tagline">381 版本 · 詳細數值一覽</p></div></div>
 <div class="container" style="padding-top:56px;padding-bottom:80px">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">目錄</div>
+  <a class="left-toc-btn" href="#rate-basic" data-sec="rate-basic">基礎倍率</a>
+  <a class="left-toc-btn" href="#rate-stats" data-sec="rate-stats">素質限制</a>
+  <a class="left-toc-btn" href="#rate-account" data-sec="rate-account">帳號限制</a>
+  <a class="left-toc-btn" href="#rate-magic" data-sec="rate-magic">魔法機制</a>
+</nav>
+<div class="page-main">
   <div style="max-width:800px;margin:0 auto">
 
     <!-- 基礎倍率與版本 -->
     <div style="background:var(--bg2);border:1px solid rgba(0,229,255,.2);border-radius:12px;padding:24px;margin-bottom:24px">
-      <h3 style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">💎 基礎倍率與版本</h3>
+      <h3 id="rate-basic" style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">💎 基礎倍率與版本</h3>
       <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
         <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 遊戲版本：<strong style="color:#ff9800">3.81 手動（天M版）</strong></li>
         <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 手動經驗：<strong style="color:#00ff7f">× 30</strong></li>
@@ -36,7 +46,7 @@
 
     <!-- 角色素質與等級限制 -->
     <div style="background:var(--bg2);border:1px solid rgba(0,229,255,.2);border-radius:12px;padding:24px;margin-bottom:24px">
-      <h3 style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">📊 角色素質與等級限制</h3>
+      <h3 id="rate-stats" style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">📊 角色素質與等級限制</h3>
       <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
         <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 玩家等級上限：<strong style="color:#ff4444">70 級</strong> <span style="color:var(--text-muted);font-size:.85em">（階段性開放）</span></li>
         <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 手點能力上限：<strong style="color:#ffcc00">25 點</strong></li>
@@ -47,7 +57,7 @@
 
     <!-- 帳號與發話限制 -->
     <div style="background:var(--bg2);border:1px solid rgba(255,68,68,.25);border-radius:12px;padding:24px;margin-bottom:24px">
-      <h3 style="color:#ff6b6b;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ff6b6b;padding-left:10px">🛡️ 帳號與發話限制</h3>
+      <h3 id="rate-account" style="color:#ff6b6b;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ff6b6b;padding-left:10px">🛡️ 帳號與發話限制</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
         <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">🚫 <strong style="color:var(--text)">多開限制：</strong><span style="color:#ff6b6b">IP 限制 3 開</span></div>
         <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">👤 <strong style="color:var(--text)">角色限制：</strong><span style="color:#ff6b6b">每帳號可創 2 隻</span></div>
@@ -58,7 +68,7 @@
 
     <!-- 魔法與平衡機制 -->
     <div style="background:var(--bg2);border:1px solid rgba(186,104,200,.25);border-radius:12px;padding:24px">
-      <h3 style="color:#ce93d8;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ce93d8;padding-left:10px">⚔️ 魔法與平衡機制</h3>
+      <h3 id="rate-magic" style="color:#ce93d8;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ce93d8;padding-left:10px">⚔️ 魔法與平衡機制</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
         <div style="background:var(--bg3);border-left:4px solid #e040fb;border-radius:0 8px 8px 0;padding:14px 16px">
           <strong style="color:#e040fb;font-size:.9em">✨ 動態調整</strong>
@@ -72,7 +82,7 @@
     </div>
 
   </div>
-</div>
+</div></div></div>
 <footer>
   <div class="footer-inner">
     <div>
@@ -108,5 +118,20 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){
+  var tocBtns = document.querySelectorAll('.left-toc-btn[data-sec]');
+  var secIds = Array.from(tocBtns).map(function(b){ return b.getAttribute('data-sec'); });
+  var secs = secIds.map(function(id){ return document.getElementById(id); });
+  function updateToc(){
+    var scroll = window.scrollY + 120;
+    var active = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= scroll) active = i; });
+    tocBtns.forEach(function(b,i){ b.classList.toggle('active', i===active); });
+  }
+  window.addEventListener('scroll', updateToc, {passive:true});
+  updateToc();
+})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>
