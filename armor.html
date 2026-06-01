@@ -30,6 +30,97 @@
     .gear-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text)}
     .gear-table tr:nth-child(even){background:var(--bg2)}
     .a-section-title{color:var(--gold);margin-top:28px;margin-bottom:10px;font-size:1.05em;display:flex;align-items:center;border-left:4px solid var(--accent);padding-left:10px}
+    /* 光之肩甲 */
+    .ls-obtain{background:linear-gradient(135deg,rgba(0,26,31,.95),rgba(0,15,20,.95));border:1px solid #1a5560;border-left:4px solid #4dd0e1;border-radius:6px;padding:11px 20px;font-size:14px;color:#80deea;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+    .ls-ob-lbl{white-space:nowrap;font-size:12px;letter-spacing:3px;color:#4dd0e1;font-weight:bold;}
+    .ls-stable{background:rgba(240,192,64,.06);border:1px solid #7a5500;border-radius:6px;padding:9px 20px;font-size:13px;color:var(--gold);text-align:center;letter-spacing:2px;margin-bottom:20px;}
+    .ls-tabs{display:flex;gap:0;margin-bottom:20px;}
+    .ls-tab{flex:1;padding:10px 0;text-align:center;font-size:13px;font-weight:bold;letter-spacing:2px;cursor:pointer;border:1px solid var(--border);background:var(--bg2);color:var(--text-muted);transition:all .2s;}
+    .ls-tab:first-child{border-radius:6px 0 0 6px;}
+    .ls-tab:last-child{border-radius:0 6px 6px 0;}
+    .ls-tab.ls-str.active{background:rgba(239,83,80,.15);border-color:#ef5350;color:#ef9a9a;}
+    .ls-tab.ls-dex.active{background:rgba(102,187,106,.12);border-color:#66bb6a;color:#a5d6a7;}
+    .ls-tab.ls-int.active{background:rgba(149,117,205,.15);border-color:#9575cd;color:#b39ddb;}
+    .ls-panel{display:none;}.ls-panel.active{display:block;}
+    .ls-ph{padding:14px 20px 12px;border-radius:8px 8px 0 0;border:1px solid;border-bottom:none;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+    .ls-ph.ls-str{background:rgba(239,83,80,.12);border-color:#ef5350;}
+    .ls-ph.ls-dex{background:rgba(102,187,106,.1);border-color:#66bb6a;}
+    .ls-ph.ls-int{background:rgba(149,117,205,.12);border-color:#9575cd;}
+    .ls-pname{font-size:18px;font-weight:900;color:#ffe88a;}
+    .ls-psub{font-size:12px;letter-spacing:3px;opacity:.7;}
+    .ls-ph.ls-str .ls-psub{color:#ef9a9a;}.ls-ph.ls-dex .ls-psub{color:#a5d6a7;}.ls-ph.ls-int .ls-psub{color:#b39ddb;}
+    .ls-tw{border:1px solid;border-top:none;border-radius:0 0 8px 8px;overflow:hidden;overflow-x:auto;}
+    .ls-panel.ls-str .ls-tw{border-color:#ef5350;}.ls-panel.ls-dex .ls-tw{border-color:#66bb6a;}.ls-panel.ls-int .ls-tw{border-color:#9575cd;}
+    .ls-tbl{width:100%;border-collapse:collapse;min-width:540px;font-size:13px;background:var(--bg2);}
+    .ls-tbl thead tr{background:rgba(255,255,255,.04);}
+    .ls-tbl thead th{padding:10px 12px;font-size:11px;letter-spacing:2px;color:var(--gold);border-bottom:1px solid var(--border);text-align:center;white-space:nowrap;}
+    .ls-tbl tbody tr{border-bottom:1px solid rgba(120,80,0,.15);transition:background .15s;}
+    .ls-tbl tbody tr:last-child{border-bottom:none;}
+    .ls-tbl tbody tr:hover{background:rgba(240,192,64,.04);}
+    .ls-tbl tbody tr:nth-child(even){background:rgba(255,255,255,.015);}
+    .ls-tbl tbody tr:nth-child(n+6) td:first-child{color:#ffd54f!important;text-shadow:0 0 10px rgba(255,213,79,.6);}
+    .ls-tbl tbody tr:nth-child(n+8) td:first-child{color:#ffb300!important;text-shadow:0 0 12px rgba(255,179,0,.7);}
+    .ls-tbl tr.ls-max{background:linear-gradient(90deg,rgba(240,192,64,.08),rgba(240,192,64,.04))!important;border-left:3px solid var(--gold);}
+    .ls-tbl tr.ls-max td{color:#ffe88a!important;}
+    .ls-tbl tr.ls-max td:first-child{color:var(--gold)!important;text-shadow:0 0 14px rgba(240,192,64,.8)!important;}
+    .ls-tbl tbody td{padding:9px 12px;text-align:center;color:var(--text);white-space:nowrap;}
+    .ls-tbl tbody td:first-child{font-weight:900;font-size:15px;color:var(--gold);text-shadow:0 0 8px rgba(240,192,64,.4);}
+    .ls-neg{color:#ef9a9a!important;}.ls-pos{color:#80cbc4!important;}
+    .ls-str-c{color:#ef9a9a!important;}.ls-dex-c{color:#a5d6a7!important;}.ls-int-c{color:#b39ddb!important;}
+    .ls-empty{color:#444;}
+    /* 光之手環 */
+    .lb-obtain{background:rgba(255,192,64,.05);border:1px solid rgba(255,192,64,.2);border-left:3px solid var(--gold);border-radius:6px;padding:11px 18px;font-size:14px;color:rgba(255,240,180,.85);display:flex;align-items:center;gap:12px;margin-bottom:16px;box-shadow:0 0 15px rgba(255,200,50,.06);}
+    .lb-ob-lbl{white-space:nowrap;font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:bold;}
+    .lb-fail{background:rgba(255,255,255,.02);border:1px solid rgba(255,224,102,.2);border-left:4px solid var(--gold);border-radius:8px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 0 20px rgba(255,200,50,.05);}
+    .lb-fail-icon{font-size:24px;flex-shrink:0;}
+    .lb-fail-title{color:#ff6b6b;font-weight:900;font-size:15px;margin-bottom:5px;text-shadow:0 0 10px rgba(255,100,100,.6);}
+    .lb-fail-desc{color:rgba(255,180,180,.85);font-size:13px;line-height:1.8;}
+    .lb-fail-desc strong{color:#ff4444;font-size:15px;font-weight:900;text-shadow:0 0 8px rgba(255,68,68,.7);}
+    .lb-card-wrap{background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,224,102,.02));border-radius:10px;border:1px solid rgba(255,224,102,.2);box-shadow:0 0 30px rgba(255,200,50,.05),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;margin-bottom:24px;}
+    .lb-card-hdr{padding:12px 20px;background:rgba(255,224,102,.06);border-bottom:1px solid rgba(255,224,102,.15);font-size:13px;font-weight:bold;letter-spacing:3px;display:flex;align-items:center;gap:10px;}
+    .lb-prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+    .lb-prob-row{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 10px;border-right:1px solid rgba(255,224,102,.08);border-bottom:1px solid rgba(255,224,102,.08);text-align:center;cursor:default;}
+    .lb-prob-row:hover{background:rgba(255,224,102,.06);}
+    .lb-el{font-size:12px;color:var(--text-muted);margin-bottom:8px;letter-spacing:1px;}
+    .lb-ep{font-size:22px;font-weight:900;line-height:1;}
+    .lb-ep.lb-c-high{color:#69db7c;text-shadow:0 0 12px rgba(105,219,124,.7);}
+    .lb-ep.lb-c-mid{color:#ffe066;text-shadow:0 0 12px rgba(255,224,102,.7);}
+    .lb-ep.lb-c-low{color:#ff922b;text-shadow:0 0 12px rgba(255,146,43,.7);}
+    .lb-ep.lb-c-danger{color:#ff6b6b;text-shadow:0 0 12px rgba(255,107,107,.7);}
+    .lb-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+    @media(max-width:720px){.lb-grid{grid-template-columns:1fr;}}
+    .lb-bcard{border-radius:10px;overflow:hidden;border:1px solid;box-shadow:0 0 30px rgba(0,0,0,.4);}
+    .lb-bcard.lb-hero{border-color:rgba(255,224,102,.35);box-shadow:0 0 20px rgba(255,200,50,.08);}
+    .lb-bcard.lb-def{border-color:rgba(160,216,255,.3);box-shadow:0 0 20px rgba(100,180,255,.06);}
+    .lb-bhead{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.06);}
+    .lb-bcard.lb-hero .lb-bhead{background:linear-gradient(135deg,rgba(255,224,102,.1),rgba(255,200,50,.04));}
+    .lb-bcard.lb-def  .lb-bhead{background:linear-gradient(135deg,rgba(160,216,255,.08),rgba(100,160,255,.03));}
+    .lb-bsub{font-size:11px;letter-spacing:3px;opacity:.65;margin-bottom:3px;}
+    .lb-bcard.lb-hero .lb-bsub{color:#ffe066;}.lb-bcard.lb-def .lb-bsub{color:#a0d8ff;}
+    .lb-bname{font-size:16px;font-weight:900;color:#fff8dc;letter-spacing:1px;}
+    .lb-bcard.lb-hero .lb-bname{text-shadow:0 0 12px rgba(255,224,102,.5);}
+    .lb-bcard.lb-def  .lb-bname{text-shadow:0 0 12px rgba(160,216,255,.5);}
+    .lb-tw{overflow-x:auto;}
+    .lb-tw table{width:100%;border-collapse:collapse;font-size:12px;background:transparent;}
+    .lb-tw thead th{padding:8px;font-size:10px;letter-spacing:1px;border-bottom:1px solid rgba(255,224,102,.12);text-align:center;white-space:nowrap;color:rgba(255,224,102,.7);background:rgba(255,255,255,.02);}
+    .lb-tw tbody tr{border-bottom:1px solid rgba(255,255,255,.04);transition:background .15s;}
+    .lb-tw tbody tr:hover{background:rgba(255,224,102,.04);}
+    .lb-tw tbody tr:nth-child(even){background:rgba(255,255,255,.015);}
+    .lb-tw tbody tr.lb-max{background:linear-gradient(90deg,rgba(255,224,102,.1),rgba(255,224,102,.03))!important;border-left:2px solid var(--gold);}
+    .lb-tw tbody tr.lb-max td{color:#fff8dc!important;}
+    .lb-tw tbody tr.lb-max td:first-child{color:var(--gold)!important;text-shadow:0 0 12px rgba(255,192,64,.7)!important;}
+    .lb-tw tbody td{padding:8px;text-align:center;white-space:nowrap;color:rgba(245,230,192,.85);}
+    .lb-tw tbody td:first-child{font-weight:900;font-size:14px;color:var(--gold);text-shadow:0 0 8px rgba(255,200,50,.4);}
+    .lb-neg{color:#ff9a9a!important;}.lb-pos{color:#80deea!important;}.lb-pct{color:#ce93d8!important;}
+    .lb-hc{color:#ffe066!important;}.lb-dc{color:#a0d8ff!important;}.lb-wt{color:#69db7c!important;}.lb-empty{color:#333!important;}
+    .lb-tips{padding:14px 18px;display:flex;flex-direction:column;gap:9px;}
+    .lb-tip-row{display:flex;align-items:baseline;gap:10px;padding:9px 14px;border-radius:6px;font-size:13px;line-height:1.75;border-left:3px solid transparent;transition:background .15s;}
+    .lb-tip-row:hover{background:rgba(255,255,255,.03);}
+    .lb-tip-row.lb-info{border-left-color:#a0d8ff;background:rgba(160,216,255,.03);}
+    .lb-tip-row.lb-danger{border-left-color:#ff6b6b;background:rgba(255,107,107,.04);}
+    .lb-tip-row.lb-safe{border-left-color:#69db7c;background:rgba(105,219,124,.04);}
+    .lb-tip-icon{font-size:14px;flex-shrink:0;}
+    .lb-tip-text strong{color:#ffe88a;}.lb-red{color:#ff6b6b;font-weight:bold;}.lb-green{color:#69db7c;font-weight:bold;}
   </style></head>
 <body>
 <nav class="topnav"><a class="topnav-logo" href="index.html">💣 砲彈天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://lin.ee/qUdjymV" target="_blank">LINE 官方社群</a><a href="sponsor.html">贊助方案</a><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/qUdjymV" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
@@ -44,6 +135,8 @@
     <button class="page-tab active" onclick="switchTab('overview')">🛡️ 防具總覽</button>
     <button class="page-tab" onclick="switchTab('craft')">⚒️ 製作系統</button>
     <button class="page-tab" onclick="switchTab('hellring')">🔥 煉獄耳環升階</button>
+    <button class="page-tab" onclick="switchTab('lightshoulder')">✨ 光之肩甲</button>
+    <button class="page-tab" onclick="switchTab('lightbracelet')">💍 光之手環</button>
   </div>
 
   <!-- ══ TAB 1: 防具總覽 ══ -->
@@ -504,6 +597,180 @@
 
   </div><!-- end tab-hellring -->
 
+  <!-- ══ TAB 4: 光之肩甲 ══ -->
+  <div id="tab-lightshoulder" class="tab-content">
+    <div style="background:linear-gradient(135deg,#001a1f,#001520);border-radius:10px;padding:25px;text-align:center;border:2px solid #4dd0e1;margin-bottom:25px;box-shadow:0 4px 20px rgba(77,208,225,.15)">
+      <h2 style="color:#4dd0e1;margin:0 0 8px;font-size:1.4em;text-shadow:0 0 12px rgba(77,208,225,.5)">✨ 光之肩甲 強化系統 ✨</h2>
+      <p style="color:#b89a60;font-size:.9em;letter-spacing:2px">SHOULDER ARMOR ENHANCEMENT GUIDE</p>
+    </div>
+    <div class="ls-obtain"><span class="ls-ob-lbl">獲得途徑</span><span>每月活動兌換 或 贊助活動獲得</span></div>
+    <div class="ls-stable">🔒 肩甲安定值 4（所有類型通用）</div>
+    <div class="ls-tabs">
+      <div class="ls-tab ls-str active" onclick="lsSwitch('str')">⚔️ 光之力量肩甲</div>
+      <div class="ls-tab ls-dex" onclick="lsSwitch('dex')">🏹 光之敏捷肩甲</div>
+      <div class="ls-tab ls-int" onclick="lsSwitch('int')">✨ 光之智力肩甲</div>
+    </div>
+    <!-- STR panel -->
+    <div class="ls-panel ls-str active">
+      <div class="ls-ph ls-str">
+        <div><div class="ls-psub">■ STR TYPE ■ 力量系</div><div class="ls-pname">光之力量肩甲</div></div>
+        <div class="ls-psub">安定值 4</div>
+      </div>
+      <div class="ls-tw">
+        <table class="ls-tbl">
+          <thead><tr><th>強化</th><th>防禦</th><th>力量</th><th>攻擊成功</th><th>額外攻擊點數</th><th>絕對傷害減免</th></tr></thead>
+          <tbody>
+            <tr><td>+0</td><td class="ls-neg">-1</td><td class="ls-str-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+1</td><td class="ls-neg">-2</td><td class="ls-str-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+2</td><td class="ls-neg">-3</td><td class="ls-str-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+3</td><td class="ls-neg">-4</td><td class="ls-str-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+4</td><td class="ls-neg">-5</td><td class="ls-str-c">+1</td><td class="ls-pos">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+5</td><td class="ls-neg">-6</td><td class="ls-str-c">+1</td><td class="ls-pos">+2</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+6</td><td class="ls-neg">-7</td><td class="ls-str-c">+1</td><td class="ls-pos">+3</td><td class="ls-pos">+1</td><td class="ls-empty">—</td></tr>
+            <tr><td>+7</td><td class="ls-neg">-8</td><td class="ls-str-c">+1</td><td class="ls-pos">+4</td><td class="ls-pos">+2</td><td class="ls-empty">—</td></tr>
+            <tr><td>+8</td><td class="ls-neg">-9</td><td class="ls-str-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+3</td><td class="ls-empty">—</td></tr>
+            <tr class="ls-max"><td>+9</td><td class="ls-neg">-10</td><td class="ls-str-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+4</td><td class="ls-pos">+3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- DEX panel -->
+    <div class="ls-panel ls-dex">
+      <div class="ls-ph ls-dex">
+        <div><div class="ls-psub">■ DEX TYPE ■ 敏捷系</div><div class="ls-pname">光之敏捷肩甲</div></div>
+        <div class="ls-psub">安定值 4</div>
+      </div>
+      <div class="ls-tw">
+        <table class="ls-tbl">
+          <thead><tr><th>強化</th><th>防禦</th><th>敏捷</th><th>攻擊命中率</th><th>遠距離攻擊力</th><th>絕對傷害減免</th></tr></thead>
+          <tbody>
+            <tr><td>+0</td><td class="ls-neg">-1</td><td class="ls-dex-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+1</td><td class="ls-neg">-2</td><td class="ls-dex-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+2</td><td class="ls-neg">-3</td><td class="ls-dex-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+3</td><td class="ls-neg">-4</td><td class="ls-dex-c">+1</td><td class="ls-pos">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+4</td><td class="ls-neg">-5</td><td class="ls-dex-c">+1</td><td class="ls-pos">+2</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+5</td><td class="ls-neg">-6</td><td class="ls-dex-c">+1</td><td class="ls-pos">+3</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+6</td><td class="ls-neg">-7</td><td class="ls-dex-c">+1</td><td class="ls-pos">+4</td><td class="ls-pos">+1</td><td class="ls-empty">—</td></tr>
+            <tr><td>+7</td><td class="ls-neg">-8</td><td class="ls-dex-c">+1</td><td class="ls-pos">+4</td><td class="ls-pos">+2</td><td class="ls-empty">—</td></tr>
+            <tr><td>+8</td><td class="ls-neg">-9</td><td class="ls-dex-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+3</td><td class="ls-empty">—</td></tr>
+            <tr class="ls-max"><td>+9</td><td class="ls-neg">-10</td><td class="ls-dex-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+4</td><td class="ls-pos">+3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- INT panel -->
+    <div class="ls-panel ls-int">
+      <div class="ls-ph ls-int">
+        <div><div class="ls-psub">■ INT TYPE ■ 智力系</div><div class="ls-pname">光之智力肩甲</div></div>
+        <div class="ls-psub">安定值 4</div>
+      </div>
+      <div class="ls-tw">
+        <table class="ls-tbl">
+          <thead><tr><th>強化</th><th>防禦</th><th>智力</th><th>魔法命中</th><th>魔攻</th><th>絕對傷害減免</th></tr></thead>
+          <tbody>
+            <tr><td>+0</td><td class="ls-neg">-1</td><td class="ls-int-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+1</td><td class="ls-neg">-2</td><td class="ls-int-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+2</td><td class="ls-neg">-3</td><td class="ls-int-c">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+3</td><td class="ls-neg">-4</td><td class="ls-int-c">+1</td><td class="ls-pos">+1</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+4</td><td class="ls-neg">-5</td><td class="ls-int-c">+1</td><td class="ls-pos">+2</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+5</td><td class="ls-neg">-6</td><td class="ls-int-c">+1</td><td class="ls-pos">+3</td><td class="ls-empty">—</td><td class="ls-empty">—</td></tr>
+            <tr><td>+6</td><td class="ls-neg">-7</td><td class="ls-int-c">+1</td><td class="ls-pos">+4</td><td class="ls-pos">+1</td><td class="ls-empty">—</td></tr>
+            <tr><td>+7</td><td class="ls-neg">-8</td><td class="ls-int-c">+1</td><td class="ls-pos">+4</td><td class="ls-pos">+2</td><td class="ls-empty">—</td></tr>
+            <tr><td>+8</td><td class="ls-neg">-9</td><td class="ls-int-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+3</td><td class="ls-empty">—</td></tr>
+            <tr class="ls-max"><td>+9</td><td class="ls-neg">-10</td><td class="ls-int-c">+1</td><td class="ls-pos">+5</td><td class="ls-pos">+4</td><td class="ls-pos">+3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);text-align:right;margin-top:12px;">※ 強化數值以遊戲內顯示為準</p>
+  </div><!-- end tab-lightshoulder -->
+
+  <!-- ══ TAB 5: 光之手環 ══ -->
+  <div id="tab-lightbracelet" class="tab-content">
+    <div style="background:linear-gradient(135deg,#1a1000,#0a0800);border-radius:10px;padding:25px;text-align:center;border:2px solid var(--gold);margin-bottom:25px;box-shadow:0 4px 20px rgba(240,192,64,.15)">
+      <h2 style="color:var(--gold);margin:0 0 8px;font-size:1.4em;text-shadow:0 0 12px rgba(240,192,64,.5)">💍 光之手環 強化系統 💍</h2>
+      <p style="color:#b89a60;font-size:.9em;letter-spacing:2px">BRACELET ENHANCEMENT GUIDE</p>
+    </div>
+    <div class="lb-obtain"><span class="lb-ob-lbl">獲得途徑</span><span>贊助獲取</span></div>
+    <div class="lb-fail">
+      <div class="lb-fail-icon">💥</div>
+      <div>
+        <div class="lb-fail-title">⚠ 強化失敗警告</div>
+        <div class="lb-fail-desc">光之手環強化失敗將導致裝備<strong>【消失】</strong>，請謹慎評估後再進行強化！</div>
+      </div>
+    </div>
+    <div class="lb-card-wrap">
+      <div class="lb-card-hdr" style="color:var(--gold);">📈 強化成功機率</div>
+      <div class="lb-prob-grid">
+        <div class="lb-prob-row"><div class="lb-el">+0 → +1</div><div class="lb-ep lb-c-high">58%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+1 → +2</div><div class="lb-ep lb-c-high">48%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+2 → +3</div><div class="lb-ep lb-c-mid">31%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+3 → +4</div><div class="lb-ep lb-c-mid">24%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+4 → +5</div><div class="lb-ep lb-c-low">20%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+5 → +6</div><div class="lb-ep lb-c-low">16.6%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+6 → +7</div><div class="lb-ep lb-c-danger">14.3%</div></div>
+        <div class="lb-prob-row"><div class="lb-el">+7 → +8</div><div class="lb-ep lb-c-danger">12%</div></div>
+      </div>
+    </div>
+    <div class="lb-grid">
+      <div class="lb-bcard lb-hero">
+        <div class="lb-bhead">
+          <div class="lb-bsub">■ HERO TYPE ■</div>
+          <div class="lb-bname">✨ 光之英雄手環</div>
+        </div>
+        <div class="lb-tw">
+          <table>
+            <thead><tr><th>強化</th><th>防禦</th><th>傷害減免</th><th>近/遠傷害</th><th>魔法迴避</th><th>昏迷抗性</th><th>負重獎勵</th></tr></thead>
+            <tbody>
+              <tr><td>+0</td><td class="lb-neg">-1</td><td class="lb-pct">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+1</td><td class="lb-neg">-2</td><td class="lb-pct">+1</td><td class="lb-hc">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+2</td><td class="lb-neg">-3</td><td class="lb-pct">+2</td><td class="lb-hc">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+3</td><td class="lb-neg">-4</td><td class="lb-pct">+2</td><td class="lb-hc">+2</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+4</td><td class="lb-neg">-5</td><td class="lb-pct">+3</td><td class="lb-hc">+2</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+5</td><td class="lb-neg">-6</td><td class="lb-pct">+3</td><td class="lb-hc">+3</td><td class="lb-pos">+2</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+6</td><td class="lb-neg">-7</td><td class="lb-pct">+4</td><td class="lb-hc">+3</td><td class="lb-pos">+2</td><td class="lb-pos">+5</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+7</td><td class="lb-neg">-8</td><td class="lb-pct">+4</td><td class="lb-hc">+4</td><td class="lb-pos">+2</td><td class="lb-pos">+7</td><td class="lb-wt">+300</td></tr>
+              <tr class="lb-max"><td>+8</td><td class="lb-neg">-9</td><td class="lb-pct">+5</td><td class="lb-hc">+5</td><td class="lb-pos">+2</td><td class="lb-pos">+9</td><td class="lb-wt">+300</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="lb-bcard lb-def">
+        <div class="lb-bhead">
+          <div class="lb-bsub">■ DEF TYPE ■</div>
+          <div class="lb-bname">🛡️ 光之防禦手環</div>
+        </div>
+        <div class="lb-tw">
+          <table>
+            <thead><tr><th>強化</th><th>防禦</th><th>傷害減免%</th><th>傷害減免</th><th>魔法命中</th><th>昏迷抗性</th><th>負重獎勵</th></tr></thead>
+            <tbody>
+              <tr><td>+0</td><td class="lb-neg">-1</td><td class="lb-pct">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+1</td><td class="lb-neg">-2</td><td class="lb-pct">+1</td><td class="lb-dc">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+2</td><td class="lb-neg">-3</td><td class="lb-pct">+2</td><td class="lb-dc">+1</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+3</td><td class="lb-neg">-4</td><td class="lb-pct">+2</td><td class="lb-dc">+2</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+4</td><td class="lb-neg">-5</td><td class="lb-pct">+3</td><td class="lb-dc">+2</td><td class="lb-empty">—</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+5</td><td class="lb-neg">-6</td><td class="lb-pct">+3</td><td class="lb-dc">+3</td><td class="lb-pos">+2</td><td class="lb-empty">—</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+6</td><td class="lb-neg">-7</td><td class="lb-pct">+4</td><td class="lb-dc">+3</td><td class="lb-pos">+2</td><td class="lb-pos">+5</td><td class="lb-wt">+300</td></tr>
+              <tr><td>+7</td><td class="lb-neg">-8</td><td class="lb-pct">+4</td><td class="lb-dc">+4</td><td class="lb-pos">+2</td><td class="lb-pos">+7</td><td class="lb-wt">+300</td></tr>
+              <tr class="lb-max"><td>+8</td><td class="lb-neg">-9</td><td class="lb-pct">+5</td><td class="lb-dc">+5</td><td class="lb-pos">+2</td><td class="lb-pos">+9</td><td class="lb-wt">+300</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="lb-card-wrap">
+      <div class="lb-card-hdr" style="color:var(--gold);">📋 貼心叮嚀</div>
+      <div class="lb-tips">
+        <div class="lb-tip-row lb-info"><span class="lb-tip-icon">📦</span><div class="lb-tip-text"><strong>光之手環強化卷軸 / 光之手環箱</strong>：無法交易、無法刪除、<span class="lb-green">可存倉</span></div></div>
+        <div class="lb-tip-row lb-danger"><span class="lb-tip-icon">💍</span><div class="lb-tip-text"><strong>光之手環系列（裝備本身）</strong>：無法交易、無法刪除、<span class="lb-red">無法存倉</span></div></div>
+        <div class="lb-tip-row lb-info"><span class="lb-tip-icon">👆</span><div class="lb-tip-text"><strong>穿戴方式</strong>：光之手環為特殊裝備欄位，需<strong>雙點擊</strong>才可穿著</div></div>
+        <div class="lb-tip-row lb-danger"><span class="lb-tip-icon">🔒</span><div class="lb-tip-text"><strong>+7 以下（含 +7）</strong>：無法轉移、<span class="lb-red">無法存倉</span>，死亡 <span class="lb-green">不掉落</span></div></div>
+        <div class="lb-tip-row lb-safe"><span class="lb-tip-icon">✅</span><div class="lb-tip-text"><strong>+8 裝備</strong>：<span class="lb-green">可倉庫轉移</span>，死亡 <span class="lb-green">不掉落</span></div></div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);text-align:right;margin-top:12px;">※ 強化數值以遊戲內顯示為準</p>
+  </div><!-- end tab-lightbracelet -->
+
 </div>
 <footer>
   <div class="footer-inner">
@@ -543,11 +810,19 @@
 <script>
 function switchTab(name){
   document.querySelectorAll('.page-tab').forEach((t,i)=>{
-    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='hellring'));
+    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='hellring')||(i===3&&name==='lightshoulder')||(i===4&&name==='lightbracelet'));
   });
   document.getElementById('tab-overview').classList.toggle('active',name==='overview');
   document.getElementById('tab-craft').classList.toggle('active',name==='craft');
   document.getElementById('tab-hellring').classList.toggle('active',name==='hellring');
+  document.getElementById('tab-lightshoulder').classList.toggle('active',name==='lightshoulder');
+  document.getElementById('tab-lightbracelet').classList.toggle('active',name==='lightbracelet');
+}
+function lsSwitch(type){
+  document.querySelectorAll('.ls-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.ls-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.ls-tab.ls-'+type).classList.add('active');
+  document.querySelector('.ls-panel.ls-'+type).classList.add('active');
 }
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
