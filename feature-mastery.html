@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>砲彈天堂 - 專精證明</title>
+<link rel="preconnect" href="https://telegraph-image-1n0.pages.dev" crossorigin>
+<link rel="dns-prefetch" href="https://telegraph-image-1n0.pages.dev">
+<link rel="stylesheet" href="style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap');
+  :root {
+    --gold: #f0c040; --gold-light: #ffe88a;
+    --text-main: #f5e6c0; --text-dim: #b89a60; --bg-dark: #0a0500;
+    --red: #ef5350; --green: #66bb6a; --purple: #ab47bc;
+    --blue: #42a5f5; --teal: #26c6da; --orange: #ffa726;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-image: url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDl2oKsIrQ--LWATlPU2Lr4azsyw-mAAKhD2sbx8dQVB2-s2pJCrnTAQADAgADeQADOwQ.jpg') !important;
+    background-size: cover !important; background-position: center center !important; background-attachment: fixed !important;
+    font-family: 'Noto Serif TC', '微軟正黑體', serif;
+    color: var(--text-main); padding: 64px 0 70px; overflow-x: hidden;
+  }
+  .section { background:rgba(6,9,16,0.82) !important; }
+  .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+  .main-banner {
+    position:relative; text-align:center; padding:56px 20px 46px;
+    background:radial-gradient(ellipse at 50% 0%,rgba(42,20,0,0.95) 0%,rgba(10,5,0,0.95) 70%);
+    border-bottom:2px solid rgba(240,192,64,0.3); overflow:hidden;
+  }
+  .main-banner::before {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse 600px 200px at 50% -20%,rgba(240,192,64,0.18) 0%,transparent 70%),
+                radial-gradient(ellipse 300px 100px at 50% 0%,rgba(255,248,200,0.1) 0%,transparent 60%);
+    pointer-events:none;
+  }
+  .main-banner::after {
+    content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,transparent,rgba(240,192,64,0.8),#fff8dc,rgba(240,192,64,0.8),transparent);
+    box-shadow:0 0 20px rgba(240,192,64,0.5);
+  }
+  .banner-icon { font-size:48px; margin-bottom:12px; display:block; filter:drop-shadow(0 0 16px rgba(240,192,64,0.9)) drop-shadow(0 0 40px rgba(200,140,30,0.6)); animation:glow-pulse 3s ease-in-out infinite; }
+  @keyframes glow-pulse {
+    0%,100%{filter:drop-shadow(0 0 16px rgba(240,192,64,0.9)) drop-shadow(0 0 40px rgba(200,140,30,0.5));}
+    50%{filter:drop-shadow(0 0 26px rgba(255,248,180,1)) drop-shadow(0 0 60px rgba(240,192,64,0.8));}
+  }
+  .banner-badge { display:inline-block; background:rgba(240,192,64,0.1); border:1px solid rgba(240,192,64,0.4); border-radius:20px; padding:3px 18px; font-size:11px; letter-spacing:5px; color:rgba(255,240,180,0.8); margin-bottom:14px; }
+  .banner-title { font-size:clamp(28px,5vw,50px); font-weight:900; color:#fff8dc; text-shadow:0 0 10px #fff,0 0 30px var(--gold),0 0 60px rgba(200,140,30,0.6),2px 2px 0 rgba(80,40,0,0.5); letter-spacing:6px; margin-bottom:8px; }
+  .banner-sub { font-size:13px; color:rgba(255,220,140,0.55); letter-spacing:4px; margin-bottom:20px; }
+  .banner-divider { display:flex; align-items:center; justify-content:center; gap:12px; max-width:460px; margin:0 auto; }
+  .banner-divider .line { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(240,192,64,0.6),transparent); }
+  .banner-divider span { color:var(--gold); font-size:18px; }
+
+  .container { max-width:980px; margin:0 auto; padding:0 16px; }
+
+  .source-bar { margin:26px 0 24px; background:rgba(38,198,218,0.06); border:1px solid rgba(38,198,218,0.25); border-left:3px solid var(--teal); border-radius:6px; padding:11px 18px; font-size:14px; color:rgba(180,245,255,0.85); display:flex; align-items:center; gap:14px; }
+  .source-bar .sb-label { white-space:nowrap; font-size:11px; letter-spacing:3px; color:var(--teal); font-weight:bold; }
+  .source-bar .sb-arrow { color:var(--gold); margin:0 4px; }
+
+  .ability-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+  @media(max-width:680px){.ability-grid{grid-template-columns:1fr;}}
+
+  .ability-card { border-radius:8px; overflow:hidden; border:1px solid; }
+  .ability-card.str { border-color:rgba(239,83,80,0.35); box-shadow:0 0 20px rgba(239,83,80,0.06); }
+  .ability-card.dex { border-color:rgba(102,187,106,0.3); box-shadow:0 0 20px rgba(102,187,106,0.06); }
+  .ability-card.int { border-color:rgba(171,71,188,0.3); box-shadow:0 0 20px rgba(171,71,188,0.06); }
+  .ability-card.def { border-color:rgba(66,165,245,0.3); box-shadow:0 0 20px rgba(66,165,245,0.06); }
+
+  .ac-head { padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.06); font-size:13px; font-weight:bold; letter-spacing:2px; }
+  .ability-card.str .ac-head { background:rgba(239,83,80,0.1); color:var(--red); }
+  .ability-card.dex .ac-head { background:rgba(102,187,106,0.08); color:var(--green); }
+  .ability-card.int .ac-head { background:rgba(171,71,188,0.08); color:var(--purple); }
+  .ability-card.def .ac-head { background:rgba(66,165,245,0.08); color:var(--blue); }
+
+  .ability-card table { width:100%; border-collapse:collapse; font-size:12px; }
+  .ability-card thead th { padding:8px 10px; font-size:10px; letter-spacing:1px; border-bottom:1px solid rgba(240,192,64,0.12); text-align:center; white-space:nowrap; color:rgba(240,192,64,0.65); background:rgba(255,255,255,0.02); }
+  .ability-card tbody tr { border-bottom:1px solid rgba(255,255,255,0.04); transition:background 0.15s; }
+  .ability-card tbody tr:hover { background:rgba(240,192,64,0.04); }
+  .ability-card tbody tr:last-child { background:linear-gradient(90deg,rgba(240,192,64,0.09),rgba(240,192,64,0.02)) !important; border-left:2px solid var(--gold); }
+  .ability-card tbody tr:last-child td { color:#fff8dc !important; }
+  .ability-card tbody td { padding:8px 10px; text-align:center; white-space:nowrap; }
+
+  .lv-cell { font-weight:900; font-size:13px; color:var(--gold); text-shadow:0 0 8px rgba(240,192,64,0.5); }
+  .c-str{color:#ef9a9a !important;} .c-dex{color:#a5d6a7 !important;} .c-int{color:#ce93d8 !important;}
+  .c-pos{color:#80deea !important;} .c-hp{color:#f48fb1 !important;} .c-sp{color:#ffe082 !important;}
+  .c-pvp{color:#ffcc80 !important;} .c-mag{color:#b39ddb !important;} .c-neg{color:#ef9a9a !important;} .c-mdef{color:#80cbc4 !important;}
+
+  .craft-card { background:linear-gradient(160deg,rgba(255,255,255,0.025) 0%,rgba(240,192,64,0.01) 100%); border-radius:8px; border:1px solid rgba(240,192,64,0.2); overflow:hidden; }
+  .craft-card .ch { padding:11px 18px; background:rgba(240,192,64,0.06); border-bottom:1px solid rgba(240,192,64,0.12); font-size:13px; font-weight:bold; letter-spacing:3px; color:var(--gold); }
+  .craft-card table { width:100%; border-collapse:collapse; font-size:12px; }
+  .craft-card thead th { padding:8px 10px; font-size:10px; letter-spacing:1px; border-bottom:1px solid rgba(240,192,64,0.12); text-align:center; white-space:nowrap; color:rgba(240,192,64,0.7); background:rgba(255,255,255,0.02); }
+  .craft-card tbody tr { border-bottom:1px solid rgba(255,255,255,0.04); transition:background 0.15s; }
+  .craft-card tbody tr:hover { background:rgba(240,192,64,0.04); }
+  .craft-card tbody tr:last-child { background:linear-gradient(90deg,rgba(240,192,64,0.09),rgba(240,192,64,0.02)) !important; border-left:2px solid var(--gold); }
+  .craft-card tbody tr:last-child td { color:#fff8dc !important; }
+  .craft-card tbody td { padding:8px 10px; text-align:center; white-space:nowrap; }
+
+  .rate-high{color:#69db7c !important;font-weight:900;} .rate-mid{color:#ffe066 !important;font-weight:900;}
+  .rate-low{color:#ffa94d !important;font-weight:900;} .rate-danger{color:#ff6b6b !important;font-weight:900;}
+  .mat-num{color:var(--gold-light);font-weight:bold;} .mat-gold{color:#ffd54f;} .mat-book{color:#b39ddb;} .mat-book2{color:#80cbc4;}
+
+  .footer-ornament { text-align:center; margin-top:50px; padding:24px; border-top:1px solid rgba(240,192,64,0.1); color:var(--text-dim); font-size:12px; letter-spacing:2px; }
+  .footer-ornament .glow-line { width:200px; height:1px; margin:0 auto 12px; background:linear-gradient(90deg,transparent,var(--gold),transparent); box-shadow:0 0 10px rgba(240,192,64,0.5); }
+</style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">💣 砲彈天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/Otc2gGk" target="_blank">LINE 官方</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/qUdjymV" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn gift" data-modal="modal-gift"><span class="fb-icon">🎁</span><span class="fb-label">申請禮包</span></button><button class="float-btn line-btn" data-modal="modal-line"><span class="fb-icon"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE"></span><span class="fb-label">LINE</span></button></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="https://lin.ee/qUdjymV" target="_blank">加入 LINE 申請禮包</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDmGoKtRjS1aZ_pX1e1lD0BSHr0duBAAKmD2sbx8dQVFmjNE0p1cLBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="main-banner">
+  <span class="banner-icon">📜</span>
+  <div class="banner-badge">MASTERY PROOF ‧ 專精證明</div>
+  <h1 class="banner-title">專精證明</h1>
+  <p class="banner-sub">MASTERY PROOF GUIDE</p>
+  <div class="banner-divider"><div class="line"></div><span>✦</span><span>◈</span><span>✦</span><div class="line"></div></div>
+</div>
+
+<div class="container">
+  <div class="source-bar">
+    <span class="sb-label">碎片來源</span>
+    <span>世界事件 <span class="sb-arrow">›</span> 冰天雪地 <span class="sb-arrow">›</span> 每天限時 <strong style="color:#fff;">2 小時</strong></span>
+  </div>
+
+  <div class="ability-grid">
+    <div class="ability-card str">
+      <div class="ac-head">⚔️ 力量專精之證</div>
+      <table>
+        <thead><tr><th>等級</th><th>力量</th><th>近距離傷害</th><th>近距離命中</th><th>PVP傷害</th></tr></thead>
+        <tbody>
+          <tr><td class="lv-cell">LV.1</td><td class="c-str">+1</td><td class="c-pos">+2</td><td class="c-pos">+2</td><td class="c-pvp">+2</td></tr>
+          <tr><td class="lv-cell">LV.2</td><td class="c-str">+2</td><td class="c-pos">+3</td><td class="c-pos">+3</td><td class="c-pvp">+3</td></tr>
+          <tr><td class="lv-cell">LV.3</td><td class="c-str">+3</td><td class="c-pos">+4</td><td class="c-pos">+4</td><td class="c-pvp">+4</td></tr>
+          <tr><td class="lv-cell">LV.4</td><td class="c-str">+4</td><td class="c-pos">+5</td><td class="c-pos">+5</td><td class="c-pvp">+5</td></tr>
+          <tr><td class="lv-cell">LV.5</td><td class="c-str">+5</td><td class="c-pos">+7</td><td class="c-pos">+7</td><td class="c-pvp">+7</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ability-card dex">
+      <div class="ac-head">🏹 敏捷專精之證</div>
+      <table>
+        <thead><tr><th>等級</th><th>敏捷</th><th>遠距離傷害</th><th>遠距離命中</th><th>PVP傷害</th></tr></thead>
+        <tbody>
+          <tr><td class="lv-cell">LV.1</td><td class="c-dex">+1</td><td class="c-pos">+2</td><td class="c-pos">+2</td><td class="c-pvp">+2</td></tr>
+          <tr><td class="lv-cell">LV.2</td><td class="c-dex">+2</td><td class="c-pos">+3</td><td class="c-pos">+3</td><td class="c-pvp">+3</td></tr>
+          <tr><td class="lv-cell">LV.3</td><td class="c-dex">+3</td><td class="c-pos">+4</td><td class="c-pos">+4</td><td class="c-pvp">+4</td></tr>
+          <tr><td class="lv-cell">LV.4</td><td class="c-dex">+4</td><td class="c-pos">+5</td><td class="c-pos">+5</td><td class="c-pvp">+5</td></tr>
+          <tr><td class="lv-cell">LV.5</td><td class="c-dex">+5</td><td class="c-pos">+7</td><td class="c-pos">+7</td><td class="c-pvp">+7</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ability-card int">
+      <div class="ac-head">🔮 智力專精之證</div>
+      <table>
+        <thead><tr><th>等級</th><th>智力</th><th>SP</th><th>近距離命中</th><th>魔法命中</th></tr></thead>
+        <tbody>
+          <tr><td class="lv-cell">LV.1</td><td class="c-int">+1</td><td class="c-sp">+2</td><td class="c-pos">+5</td><td class="c-mag">+1</td></tr>
+          <tr><td class="lv-cell">LV.2</td><td class="c-int">+2</td><td class="c-sp">+3</td><td class="c-pos">+6</td><td class="c-mag">+2</td></tr>
+          <tr><td class="lv-cell">LV.3</td><td class="c-int">+3</td><td class="c-sp">+4</td><td class="c-pos">+7</td><td class="c-mag">+3</td></tr>
+          <tr><td class="lv-cell">LV.4</td><td class="c-int">+4</td><td class="c-sp">+5</td><td class="c-pos">+8</td><td class="c-mag">+4</td></tr>
+          <tr><td class="lv-cell">LV.5</td><td class="c-int">+5</td><td class="c-sp">+7</td><td class="c-pos">+10</td><td class="c-mag">+5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ability-card def">
+      <div class="ac-head">🛡️ 防禦專精之證</div>
+      <table>
+        <thead><tr><th>等級</th><th>防禦</th><th>魔防</th><th>HP</th><th>傷害減免</th></tr></thead>
+        <tbody>
+          <tr><td class="lv-cell">LV.1</td><td class="c-neg">-3</td><td class="c-mdef">+5</td><td class="c-hp">+300</td><td class="c-pos">+3</td></tr>
+          <tr><td class="lv-cell">LV.2</td><td class="c-neg">-4</td><td class="c-mdef">+8</td><td class="c-hp">+400</td><td class="c-pos">+4</td></tr>
+          <tr><td class="lv-cell">LV.3</td><td class="c-neg">-5</td><td class="c-mdef">+11</td><td class="c-hp">+500</td><td class="c-pos">+5</td></tr>
+          <tr><td class="lv-cell">LV.4</td><td class="c-neg">-6</td><td class="c-mdef">+14</td><td class="c-hp">+600</td><td class="c-pos">+6</td></tr>
+          <tr><td class="lv-cell">LV.5</td><td class="c-neg">-7</td><td class="c-mdef">+18</td><td class="c-hp">+700</td><td class="c-pos">+7</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="craft-card">
+    <div class="ch">🔨 製作方法（四種專精共用）</div>
+    <table>
+      <thead><tr><th>目標等級</th><th>成功率</th><th>專精碎片</th><th>金幣</th><th>秘笈種類</th><th>數量</th></tr></thead>
+      <tbody>
+        <tr><td class="lv-cell">LV.1</td><td class="rate-high">100%</td><td class="mat-num">3,000</td><td class="mat-gold">3,000萬</td><td class="mat-book2">傳說製作秘笈</td><td class="mat-num">×1</td></tr>
+        <tr><td class="lv-cell">LV.2</td><td class="rate-mid">80%</td><td class="mat-num">4,000</td><td class="mat-gold">4,000萬</td><td class="mat-book">英雄製作秘笈</td><td class="mat-num">×2</td></tr>
+        <tr><td class="lv-cell">LV.3</td><td class="rate-mid">70%</td><td class="mat-num">5,000</td><td class="mat-gold">5,000萬</td><td class="mat-book">英雄製作秘笈</td><td class="mat-num">×3</td></tr>
+        <tr><td class="lv-cell">LV.4</td><td class="rate-low">60%</td><td class="mat-num">6,000</td><td class="mat-gold">6,000萬</td><td class="mat-book">英雄製作秘笈</td><td class="mat-num">×4</td></tr>
+        <tr><td class="lv-cell">LV.5</td><td class="rate-danger">50%</td><td class="mat-num">7,000</td><td class="mat-gold">7,000萬</td><td class="mat-book">英雄製作秘笈</td><td class="mat-num">×5</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer-ornament">
+  <div class="glow-line"></div>
+  如有任何疑問請聯繫遊戲客服
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">砲彈天堂</div>
+      <ul class="footer-links">
+        <li><a href="index.html">首頁</a></li><li><a href="events-list.html">活動介紹</a></li>
+        <li><a href="download.html">檔案下載</a></li><li><a href="rates.html">版本倍率</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">遊戲資訊</div>
+      <ul class="footer-links">
+        <li><a href="features.html">遊戲特色</a></li><li><a href="boss.html">BOSS介紹</a></li>
+        <li><a href="maps.html">特殊地圖掉落</a></li><li><a href="items.html">道具介紹</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡我們</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 官方社群</a></li>
+        <li><a href="promote.html">推文與直播</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;padding:20px 0;"><a href="https://www.gamex123.com/lineage.html" target="_blank"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDxmoVY552dFOKeKn6_vyXg1NzhUZCAAJnD2sbhZOoVPrpotXRf4rQAQADAgADeAADOwQ.gif" alt="" style="max-width:100%;display:block;margin:0 auto;"></a></div>
+  <div class="footer-copy">© 2026 砲彈天堂 · 版權所有</div>
+</footer>
+<script src="main.js"></script>
+<script src="events-data.js"></script>
+<button id="backToTop" title="回到頂部">&#8679;</button>
+</body>
+</html>
